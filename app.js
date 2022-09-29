@@ -8,7 +8,7 @@ const notFound = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
 // middleware
-
+app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'))
 app.use(express.json())
 
