@@ -22,20 +22,6 @@ const getTask = asyncWrapper(async (req, res, next) => {
   if (!task) {
     return next(createCustomError(`No task with id : ${taskID}`, 404));
   }
-
-  //example!!
-  //mongoose model has a .then so it can await SIMILAR to a promise but it is not a promise!!!
-  // try {
-  //   const { id: taskID } = req.params;
-  //   const task = await Task.findOne({ _id: taskID });
-  //   if (!task) {
-  //     return res.status(404).json({ msg: `No task with id: ${taskID}` });
-  //   }
-  //   res.status(200).json({ task });
-  // } catch (error) {
-  //   res.status(500).json({ msg: error });
-  // }
-
   res.status(200).json({ task });
 });
 
